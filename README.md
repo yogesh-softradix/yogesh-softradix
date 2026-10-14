@@ -102,14 +102,6 @@ February 2019 – February 2023
 
 ---
 
-## 🤝 Connect
-
-- 📧 Email: [its.yogesh.23@gmail.com](mailto:its.yogesh.23@gmail.com)
-- 💻 GitHub: [yogesh-softradix](https://github.com/yogesh-softradix)
-- 🔗 LinkedIn: Add your LinkedIn profile URL here
-
----
-
 <div align="center">
 
 **Automate deployments. Build resilient infrastructure. Keep learning.** 🚀
