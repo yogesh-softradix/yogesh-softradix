@@ -1,14 +1,13 @@
 <div align="center">
 
-# Hey, I'm Yogesh Sharma 👋
+# Hi, I'm Yogesh Sharma 👋
 
-### DevOps Engineer | Cloud Infrastructure | CI/CD | Automation
+### DevOps Engineer | Cloud • Kubernetes • CI/CD • Infrastructure as Code
 
-Building reliable, secure, and scalable infrastructure through automation.
+I build automated deployment workflows, manage cloud infrastructure, and improve application reliability through containerization, GitOps, and observability.
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YOUR_GITHUB_USERNAME)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
+[![GitHub](https://img.shields.io/badge/GitHub-yogesh--softradix-181717?style=for-the-badge&logo=github)](https://github.com/yogesh-softradix)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:its.yogesh.23@gmail.com)
 
 </div>
 
@@ -16,92 +15,103 @@ Building reliable, secure, and scalable infrastructure through automation.
 
 ## 👨‍💻 About Me
 
-I'm a DevOps Engineer who enjoys automating infrastructure, improving deployment workflows, and building dependable cloud environments. I work across cloud platforms, containers, CI/CD pipelines, infrastructure as code, and monitoring.
-
-- ☁️ Working with **AWS** and **Microsoft Azure**
-- 🐳 Containerizing applications with **Docker** and deploying workloads to **Kubernetes**
-- ⚙️ Building CI/CD workflows with **GitHub Actions** and **Jenkins**
-- 🏗️ Managing infrastructure as code with **Terraform**
-- 📊 Exploring observability with **Grafana, Loki, and Alloy**
-- 🔐 Interested in DevSecOps, repository security, and secure deployment practices
-- 📚 Continuously learning and documenting practical DevOps solutions
+- 🔧 DevOps Engineer with hands-on experience in cloud infrastructure, CI/CD automation, and application deployments.
+- ☁️ Work with **AWS, Oracle Cloud Infrastructure (OCI), and Azure-connected environments**.
+- 📦 Build and deploy containerized applications with **Docker, Kubernetes, EKS, and AKS**.
+- 🔄 Automate delivery workflows using **GitHub Actions, GitLab CI, Jenkins, and Argo CD**.
+- 🏗️ Provision infrastructure using **Terraform** and manage Kubernetes applications with **Helm**.
+- 📊 Set up monitoring and logging with **Prometheus, Grafana, Loki, Alloy, and CloudWatch**.
+- 🔐 Interested in secure infrastructure, reliable deployments, and practical DevSecOps workflows.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technical Skills
 
-| Category | Tools & Technologies |
+| Area | Technologies |
 |---|---|
-| Cloud | AWS, Microsoft Azure |
-| Containers & Orchestration | Docker, Kubernetes, Helm |
-| Infrastructure as Code | Terraform |
-| CI/CD | GitHub Actions, Jenkins |
-| Web & Networking | Linux, Nginx, SSH, DNS, TLS/SSL |
-| Monitoring & Logging | Grafana, Loki, Grafana Alloy |
-| Databases & Caching | MySQL, PostgreSQL, Redis |
-| Scripting & Runtime | Bash, Node.js |
-| Version Control | Git, GitHub |
+| **Cloud Platforms** | AWS (EC2, EKS, S3, IAM, CloudWatch, VPC, Route 53), Oracle Cloud Infrastructure (OCI) |
+| **Containers & Orchestration** | Docker, Kubernetes, Amazon EKS, Azure AKS, Helm |
+| **CI/CD & GitOps** | GitHub Actions, GitLab CI, Jenkins, Argo CD |
+| **Infrastructure as Code** | Terraform |
+| **Web Servers & Process Management** | Nginx, Apache, PM2 |
+| **Monitoring & Logging** | Prometheus, Grafana, Loki, Grafana Alloy, Promtail, CloudWatch |
+| **Databases** | MySQL, PostgreSQL, Amazon RDS |
+| **Version Control** | Git, GitHub, GitLab |
+| **Scripting & Systems** | Linux, Bash, server administration, networking, DNS, SSL/TLS |
 
 ---
 
-## 🚀 Featured Work
+## 🚀 Projects & Hands-on Work
 
-> Replace the example links below with your actual public repositories before publishing.
+### ☸️ Containerization & Kubernetes
+- Containerized Node.js, Python, and React applications using optimized Dockerfiles and multi-stage builds.
+- Worked with Kubernetes Deployments, Services, Ingress, ConfigMaps, Secrets, and autoscaling.
+- Deployed workloads to EKS and AKS environments.
 
-### ☸️ Kubernetes & Terraform Infrastructure
-Infrastructure-as-code work for cloud networking, Kubernetes clusters, node pools, private endpoints, and supporting platform resources.
+### 🔄 CI/CD Pipeline Automation
+- Built and maintained CI/CD pipelines with GitHub Actions and GitLab CI for automated build, test, and deployment workflows.
+- Worked with GitHub-hosted and self-hosted runners.
+- Integrated static code analysis, unit testing, and Docker image publishing into pipelines.
+- Created Jenkins pipelines for staging and production deployments, including rolling updates.
 
-### 🔄 CI/CD & Container Deployments
-Automated build, image publishing, and deployment workflows using GitHub Actions, Docker, container registries, and remote Linux servers.
+### 🏗️ Terraform & Cloud Infrastructure
+- Used Terraform to provision cloud infrastructure and create EKS clusters with modular infrastructure-as-code practices.
+- Worked with compute instances, storage, networking, subnets, and cloud database resources.
+- Set up secure cross-cloud connectivity between a private PostgreSQL database on OCI and an Azure environment through a VPN tunnel.
+
+### 🔀 Argo CD & GitOps
+- Set up declarative, Git-based deployment workflows for Kubernetes environments.
+- Worked with Argo CD sync waves, project RBAC, and automated image updates.
 
 ### 📊 Monitoring & Observability
-Monitoring and log aggregation experiments using Grafana, Loki, and Alloy, with a focus on making troubleshooting easier.
+- Built monitoring and logging setups using Prometheus, Grafana, Loki, and Promtail.
+- Created dashboards for application performance, server metrics, logs, and deployment health.
+- Configured alerts for resource spikes, pod failures, and deployment issues.
 
-### 🔐 DevSecOps & Repository Security
-Exploring automated security checks, dependency scanning, and safer repository and deployment practices.
-
----
-
-## 🎯 Current Focus
-
-- Improving cloud infrastructure reliability and security
-- Building repeatable CI/CD pipelines
-- Practicing Kubernetes operations and troubleshooting
-- Strengthening Terraform and cloud architecture skills
-- Documenting hands-on labs and reusable automation
+### 🌐 Website Hosting & Reverse Proxy
+- Hosted WordPress and custom web applications using Apache and Nginx.
+- Deployed Node.js applications with Apache ProxyPass and PM2.
+- Configured SSL certificates with Certbot and automated server tasks with Bash scripts.
 
 ---
 
-## 📜 Certifications & Learning
+## 💼 Experience
 
-- AWS Certified Cloud Practitioner (CLF-C02) — **add certification status/link**
-- Microsoft Azure Fundamentals (AZ-900) — **add certification status/link**
-
-*If you're still preparing for either certification, change the wording to “Preparing for” rather than listing it as earned.*
+- **DevOps Engineer** — July 2025–Present
+- **DevOps Intern** — May 2024–June 2025
+- **DevOps Training** — November 2023–April 2024
 
 ---
 
-## 📈 GitHub Stats
+## 📚 Education
+
+**Diploma in Electrical Engineering**  
+Government Polytechnic College, Nanakpur, Haryana  
+February 2019 – February 2023
+
+---
+
+## 🎯 Current Learning & Interests
+
+- Kubernetes operations, scaling, and troubleshooting
+- Secure and reusable Terraform modules
+- CI/CD reliability and deployment automation
+- GitOps workflows and release engineering
+- Cloud monitoring, logging, and incident troubleshooting
+- DevSecOps and repository security scanning
+
+---
+
+## 🤝 Connect
+
+- 📧 Email: [its.yogesh.23@gmail.com](mailto:its.yogesh.23@gmail.com)
+- 💻 GitHub: [yogesh-softradix](https://github.com/yogesh-softradix)
+- 🔗 LinkedIn: Add your LinkedIn profile URL here
+
+---
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&hide_border=true&rank_icon=github)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&hide_border=true)
-
-</div>
-
----
-
-## 🤝 Let's Connect
-
-I'm interested in cloud infrastructure, DevOps automation, Kubernetes, and open-source collaboration.
-
-- LinkedIn: [Connect with me](YOUR_LINKEDIN_URL)
-- Email: [YOUR_EMAIL](mailto:YOUR_EMAIL)
-
-<div align="center">
-
-**Automate the repeatable. Monitor the important. Secure every deployment.** 🚀
+**Automate deployments. Build resilient infrastructure. Keep learning.** 🚀
 
 </div>
