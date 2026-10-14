@@ -430,6 +430,124 @@ Multi-stage builds with a slim or alpine base, so only runtime artifacts ship. �
 
 ---
 
+## 🕹️ Play: Incident Commander (Save Production!)
+
+> 🚨 **2:07 AM.** Your phone explodes with alerts. A deploy just went out and users are seeing **502 errors**. You're the on-call DevOps engineer. **What do you do?**
+> Click a choice to play. Every click reveals the next move. Can you reach the 🏆 ending?
+
+<details>
+<summary>🔄 <b>A)</b> Restart all the pods. Turn it off and on again!</summary>
+
+<br/>
+
+⏳ Pods restart... and for 2 minutes everything looks fine. Then the **502s come back**. Same crash, same reason. You've learned nothing.
+
+**What now?**
+
+<details>
+<summary>🔁 <b>A1)</b> Restart again, it must work this time</summary>
+
+<br/>
+
+💀 **GAME OVER: The Restart Loop.** You restarted 9 times. Slack is on fire. Your manager is awake. Insanity is doing the same thing and expecting different results.
+
+</details>
+
+<details>
+<summary>🔍 <b>A2)</b> Stop. Read the logs properly.</summary>
+
+<br/>
+
+📜 `kubectl logs <pod> --previous` shows the app can't bind to its port. The new image listens on **3000**, but the Service targets **8080**.
+
+**Fix it how?**
+
+<details>
+<summary>✏️ <b>A2-i)</b> <code>kubectl edit</code> the Service directly on the cluster</summary>
+
+<br/>
+
+⚠️ It works... for about 3 minutes. Then **Argo CD `selfHeal`** reverts your manual change because Git is the source of truth. The 502s return.
+
+Lesson learned: go through Git. Pick **A2-ii** next time.
+
+</details>
+
+<details>
+<summary>📝 <b>A2-ii)</b> Fix the port in Git and let Argo CD sync</summary>
+
+<br/>
+
+🏆 **YOU WIN: GitOps Hero!** The fix is in Git, Argo CD syncs it, pods turn healthy, 502s vanish. The change is also tracked and reviewable.
+
+</details>
+
+</details>
+
+</details>
+
+<details>
+<summary>🔍 <b>B)</b> Check Grafana and the logs first.</summary>
+
+<br/>
+
+📊 Grafana shows the error rate spiked **exactly** at deploy time. Logs show readiness probes failing on the new pods.
+
+**Next move?**
+
+<details>
+<summary>⏪ <b>B1)</b> Roll back via Argo CD to the previous revision</summary>
+
+<br/>
+
+✅ Service restored in under a minute. Users are happy. But you still don't know **why** it broke.
+
+**Final call:**
+
+<details>
+<summary>📋 <b>B1-i)</b> Reproduce in staging, fix it, write a short postmortem</summary>
+
+<br/>
+
+👑 **BEST ENDING: Incident Commander!** Root cause found (wrong container port), fix verified in staging, a readiness-check step added to the pipeline, and a postmortem shared. This never happens again.
+
+</details>
+
+<details>
+<summary>😴 <b>B1-ii)</b> It's 3 AM. Go back to sleep.</summary>
+
+<br/>
+
+😬 **BAD ENDING: The Sequel.** The next push redeploys the same bug. Same alert. Same 2 AM. You earned this one.
+
+</details>
+
+</details>
+
+<details>
+<summary>🧨 <b>B2)</b> Delete the namespace and recreate everything</summary>
+
+<br/>
+
+💥 **GAME OVER: Scorched Earth.** You also deleted the PVCs, ConfigMaps and Secrets. Production is now *very* down. Backups are your only friend.
+
+</details>
+
+</details>
+
+<details>
+<summary>🙈 <b>C)</b> Ignore it. Probably a false alarm.</summary>
+
+<br/>
+
+📉 **GAME OVER: Alert Fatigue.** It wasn't a false alarm. You find out at 9 AM, along with 400 support tickets.
+
+</details>
+
+**🏁 Endings to find:** 🏆 GitOps Hero · 👑 Incident Commander · 😴 The Sequel · 💀 The Restart Loop · 💥 Scorched Earth · 📉 Alert Fatigue
+
+---
+
 ## 🎯 Currently Levelling Up
 
 - [ ] ☸️ Kubernetes operations, scaling, and troubleshooting
