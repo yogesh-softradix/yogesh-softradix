@@ -3,12 +3,11 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=220&section=header&text=Yogesh%20Sharma&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=DevOps%20Engineer%20%7C%20Cloud%20%E2%80%A2%20Kubernetes%20%E2%80%A2%20CI%2FCD%20%E2%80%A2%20IaC&descAlignY=60&descSize=18" alt="header" />
 
 <a href="https://github.com/yogesh-softradix">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=00D4FF&center=true&vCenter=true&width=700&lines=Automate+deployments+%F0%9F%9A%80;Build+resilient+infrastructure+%E2%98%B8%EF%B8%8F;Ship+fast%2C+break+nothing+%F0%9F%9B%A1%EF%B8%8F;Everything+as+Code.+Always.+%F0%9F%A7%AC" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=00D4FF&center=true&vCenter=true&width=700&height=40&lines=Automate+deployments+%F0%9F%9A%80;Build+resilient+infrastructure+%E2%98%B8%EF%B8%8F;Ship+fast%2C+break+nothing+%F0%9F%9B%A1%EF%B8%8F;Everything+as+Code.+Always.+%F0%9F%A7%AC" alt="Typing SVG" />
 </a>
 
-<br/>
+<br/><br/>
 
-![Profile Views](https://komarev.com/ghpvc/?username=yogesh-softradix&label=Profile%20Views&color=0e75b6&style=for-the-badge)
 [![GitHub](https://img.shields.io/badge/GitHub-yogesh--softradix-181717?style=for-the-badge&logo=github)](https://github.com/yogesh-softradix)
 [![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:its.yogesh.23@gmail.com)
 
@@ -29,8 +28,11 @@ clouds      : AWS, OCI, Azure-connected environments
 mission     : Automate deployments. Improve reliability. Reduce toil.
 status      : always learning, always shipping 🚀
 
-$ uptime
-Running since Nov 2023 (training) -> DevOps Engineer (Jul 2025 - Present)
+$ kubectl get pods -n yogesh
+NAME                 READY   STATUS    RESTARTS   AGE
+curiosity-7d9f8c     1/1     Running   0          ∞
+automation-5b6c4d    1/1     Running   0          ∞
+coffee-0             1/1     Running   0          ∞
 ```
 
 I build automated deployment workflows, manage cloud infrastructure, and improve application reliability through containerization, GitOps, and observability.
@@ -76,9 +78,14 @@ Dashboards, logs and alerts with **Prometheus**, **Grafana**, **Loki**, **Alloy*
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=aws,azure,oracle,docker,kubernetes,terraform,githubactions,gitlab,jenkins,argocd,prometheus,grafana&perline=12" alt="devops skills" />
+<img src="https://skillicons.dev/icons?i=aws,azure,docker,kubernetes,terraform,githubactions,gitlab,jenkins,prometheus,grafana&perline=10" alt="cloud and devops tools" />
 <br/>
-<img src="https://skillicons.dev/icons?i=linux,bash,nginx,apache,mysql,postgres,git,github,nodejs,python,react,wordpress&perline=12" alt="other skills" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" height="48" alt="Oracle Cloud" title="Oracle Cloud (OCI)" />&nbsp;&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg" height="48" alt="Argo CD" title="Argo CD" />&nbsp;&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" height="48" alt="Apache" title="Apache" />&nbsp;&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/helm/helm-original.svg" height="48" alt="Helm" title="Helm" />
+<br/>
+<img src="https://skillicons.dev/icons?i=linux,bash,nginx,mysql,postgres,git,github,nodejs,python,react,wordpress&perline=11" alt="systems and apps" />
 
 </div>
 
@@ -98,7 +105,7 @@ Dashboards, logs and alerts with **Prometheus**, **Grafana**, **Loki**, **Alloy*
 
 ---
 
-## 🔁 How I Ship: My Typical Delivery Flow
+## 🔁 How I Ship: Delivery Flow
 
 ```mermaid
 flowchart LR
@@ -110,6 +117,51 @@ flowchart LR
     F --> G[📊 Prometheus + Grafana + Loki]
     G -->|Alerts| H[🔔 Fix & Iterate]
     H --> A
+```
+
+### 🔬 What happens on a deploy
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Dev as 👨‍💻 Developer
+    participant CI as 🧪 CI Pipeline
+    participant Reg as 🐳 Registry
+    participant Git as 📦 GitOps Repo
+    participant Argo as 🔀 Argo CD
+    participant K8s as ☸️ Kubernetes
+    participant Mon as 📊 Monitoring
+
+    Dev->>CI: push / merge
+    CI->>CI: lint, test, scan
+    CI->>Reg: publish image
+    CI->>Git: bump image tag
+    Argo->>Git: detect drift
+    Argo->>K8s: sync (waves)
+    K8s-->>Mon: metrics + logs
+    Mon-->>Dev: alert if unhealthy 🔔
+```
+
+---
+
+## 🧱 Architecture Patterns I Work With
+
+```mermaid
+graph TB
+    subgraph Cloud_A["☁️ OCI"]
+        DB[(🐘 Private PostgreSQL)]
+    end
+    subgraph Cloud_B["☁️ Azure"]
+        APP[⚙️ App Environment]
+    end
+    subgraph AWS["☁️ AWS"]
+        EKS[☸️ EKS Cluster]
+        R53[🌍 Route 53]
+        CW[📈 CloudWatch]
+    end
+    APP <-->|🔒 VPN Tunnel| DB
+    R53 --> EKS
+    EKS --> CW
 ```
 
 ---
@@ -178,44 +230,203 @@ flowchart LR
 
 ---
 
-## 📈 GitHub Stats
+## 🧪 Code Snippets I Like (Reference Patterns)
 
-<div align="center">
+<details>
+<summary><b>🐳 Multi-stage Dockerfile (Node.js)</b></summary>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=yogesh-softradix&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="stats" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yogesh-softradix&layout=compact&theme=tokyonight&hide_border=true" alt="top langs" />
+```dockerfile
+# ---- build stage ----
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
 
-<br/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=yogesh-softradix&theme=tokyonight&hide_border=true" alt="streak" />
-
-</div>
-
----
-
-## 💼 Journey
-
-```text
-2023 ──●── Nov 2023 – Apr 2024 : DevOps Training
-        │
-2024 ──●── May 2024 – Jun 2025 : DevOps Intern
-        │
-2025 ──●── Jul 2025 – Present  : DevOps Engineer  ← you are here 📍
+# ---- runtime stage ----
+FROM node:20-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/package*.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+USER node
+EXPOSE 3000
+CMD ["node", "dist/main.js"]
 ```
 
-| Role | Period |
-|---|---|
-| 🧑‍💻 **DevOps Engineer** | July 2025 – Present |
-| 🛠️ **DevOps Intern** | May 2024 – June 2025 |
-| 🎓 **DevOps Training** | November 2023 – April 2024 |
+</details>
+
+<details>
+<summary><b>🔄 GitHub Actions: build, test, push</b></summary>
+
+```yaml
+name: ci
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: npm test
+      - uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: myorg/app:${{ github.sha }}
+```
+
+</details>
+
+<details>
+<summary><b>🏗️ Terraform: module-style layout</b></summary>
+
+```hcl
+module "eks" {
+  source          = "./modules/eks"
+  cluster_name    = var.cluster_name
+  cluster_version = var.cluster_version
+  subnet_ids      = module.vpc.private_subnets
+
+  tags = {
+    Environment = var.env
+    ManagedBy   = "terraform"
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><b>🔀 Argo CD: Application with auto-sync</b></summary>
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/your-org/gitops-repo
+    path: apps/my-app
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: my-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+```
+
+</details>
+
+<details>
+<summary><b>🔔 Prometheus alert: pod crash looping</b></summary>
+
+```yaml
+groups:
+  - name: pod-alerts
+    rules:
+      - alert: PodCrashLooping
+        expr: increase(kube_pod_container_status_restarts_total[15m]) > 3
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Pod {{ $labels.pod }} is crash looping"
+```
+
+</details>
 
 ---
 
-## 📚 Education
+## ✅ My Production-Readiness Checklist
 
-🎓 **Diploma in Electrical Engineering**
-Government Polytechnic College, Nanakpur, Haryana
-*February 2019 – February 2023*
+- [x] Infrastructure defined as code (Terraform)
+- [x] Everything deployed via Git (GitOps)
+- [x] Multi-stage, minimal container images
+- [x] Health checks and autoscaling configured
+- [x] Dashboards and alerts before go-live
+- [x] Secrets never in Git
+- [x] Rollback path tested
+
+---
+
+## 🎮 Mini Game: DevOps Quiz Challenge
+
+> Think you know your stuff? Answer in your head, then click to reveal. Keep your score! 🏆
+
+**🥉 Level 1: Warm-up**
+
+*Q1. A pod keeps restarting and `kubectl get pods` shows `CrashLoopBackOff`. Which command shows why it crashed?*
+
+<details><summary>👉 Reveal answer</summary>
+
+`kubectl logs <pod> --previous` (plus `kubectl describe pod <pod>` for events). ✅ +1 point
+
+</details>
+
+*Q2. Which Terraform command shows what will change without applying anything?*
+
+<details><summary>👉 Reveal answer</summary>
+
+`terraform plan` ✅ +1 point
+
+</details>
+
+**🥈 Level 2: Getting Serious**
+
+*Q3. In Argo CD, which sync policy option reverts manual changes made directly on the cluster?*
+
+<details><summary>👉 Reveal answer</summary>
+
+`selfHeal: true` ✅ +2 points
+
+</details>
+
+*Q4. A Docker image is 1.2 GB for a simple Node.js app. What's the first technique you reach for?*
+
+<details><summary>👉 Reveal answer</summary>
+
+Multi-stage builds with a slim or alpine base, so only runtime artifacts ship. ✅ +2 points
+
+</details>
+
+**🥇 Level 3: Boss Fight**
+
+*Q5. Deploy succeeded, pods are `Running`, but users get 502 from the Ingress. Name three things you check.*
+
+<details><summary>👉 Reveal answer</summary>
+
+1. Service selectors match the pod labels (`kubectl get endpoints`)
+2. The readiness probe and the container port actually match
+3. Ingress backend service name and port are correct (and check ingress controller logs)
+
+✅ +3 points
+
+</details>
+
+**🏆 Your score**
+
+| Points | Rank |
+|---|---|
+| 0 – 3 | 🐣 Junior Pod |
+| 4 – 6 | ⚙️ Pipeline Wrangler |
+| 7 – 8 | ☸️ Cluster Commander |
+| 9 | 👑 Certified YAML Whisperer |
 
 ---
 
@@ -227,6 +438,16 @@ Government Polytechnic College, Nanakpur, Haryana
 - [ ] 🔀 GitOps workflows and release engineering
 - [ ] 📊 Cloud monitoring, logging, and incident troubleshooting
 - [ ] 🔐 DevSecOps and repository security scanning
+
+---
+
+## 💼 Experience
+
+| Role | Period |
+|---|---|
+| 🧑‍💻 **DevOps Engineer** | July 2025 – Present |
+| 🛠️ **DevOps Intern** | May 2024 – June 2025 |
+| 🎓 **DevOps Training** | November 2023 – April 2024 |
 
 ---
 
